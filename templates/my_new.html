@@ -1,0 +1,51 @@
+<html>
+<title></title>
+<head></head>
+<body>
+<form method="POST">
+    <input type="text" name="text">
+    <input type="submit">
+</form>
+<div class="box" name='data'>
+    <article class="media">
+      <div class="media-content">
+        <div class="content">
+          {%for data1 in data %}
+            <p>
+              <strong>Country</strong> <small>{{data1.country}}</small>
+            </p>
+            <p>
+              <strong>Temprature</strong> <small>{{data1.temp}}</small>
+            </p>
+            <p>
+              <strong>Minimum Temprature</strong> <small>{{data1.temp_min}}</small>
+            </p>
+            <p>
+              <strong>Maximum Temprature</strong> <small>{{data1.temp_max}}</small>
+            </p>
+            <p>
+              <strong>Wind Speed</strong> <small>{{data1.speed}}</small>
+            </p>
+            <p>
+              <strong>Humidity</strong> <small>{{data1.humidity}}</small>
+            </p>
+            <p>
+              <strong>City</strong> <small>{{data1.city}}</small>
+            </p>
+        {% endfor %}
+        </div>
+      </div>
+    </article>
+</div>
+
+<div class="box2" name='recent'>
+  <strong>Recent Serches</strong>
+  {%for data2 in data3 %}
+    <p>
+      <small>{{data2.city}}</small>
+    </p>
+  {% endfor %}
+
+</div>
+</body>
+</html>
